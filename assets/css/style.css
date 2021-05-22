@@ -1,0 +1,50 @@
+:root {
+  --primary-color: #ffb3ba;
+  --secondary-color: #ffdfba;
+  --tertiary-color: #ffffba;
+  --quaternary-color: #baffc9;
+  --quinary-color: #bae1ff;
+  --light-color: white;
+}
+
+body {
+  background-color: var(--quinary-color);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: var(--light-color);
+  text-shadow: 1px 1px 0.5px darkgray;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* welcome page start */
+header {
+  display: flex;
+  text-align: center;
+  margin: 50px;
+}
+
+header h1 {
+  font-size: 50px;
+  margin: 15px;
+}
+
+header p {
+  margin: 10px 15px 10px 15px;
+}
+
+.btn {
+  background-color: var(--secondary-color);
+  border: 1px;
+  border-radius: 12px;
+  border-color: var(--light-color);
+  border-style: groove;
+  margin: 10px;
+  padding: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: var(--light-color);
+  text-shadow: 1px 1px 0.5px darkgray;
+}
