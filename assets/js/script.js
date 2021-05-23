@@ -1,12 +1,57 @@
-var startButton = document.querySelector("#start-btn");
+var startButton = document.getElementById("start-btn");
 var timer = document.querySelector("#timer");
+var mainPage = document.querySelector("#main-page");
+var questionsSection = document.getElementById("questions-section");
+var firstQuestionEl;
 
+// create a question with a header and 4 buttons for possible answers
+
+//Array with all Questions
+var questions = [
+  {
+    question: "This is your first question?",
+    answers: ["a", "b", "c", "d"],
+  },
+  {
+    question: "This is your second question?",
+    answers: ["a", "b", "c", "d"],
+  },
+  {
+    question: "This is your third question?",
+    answers: ["a", "b", "c", "d"],
+  },
+  {
+    question: "This is your fourth question?",
+    answers: ["a", "b", "c", "d"],
+  },
+  {
+    question: "This is your fifth question?",
+    answers: ["a", "b", "c", "d"],
+  },
+];
+
+// making the objects within the array a button
+var creatingButtons = function () {
+  var questionSectionEl = document.createElement("div");
+  questionSectionEl.className = "questions";
+  questionSectionEl.textContent = questions[0].question;
+
+  console.log(questionSectionEl.nodeType);
+  mainPage = questionSectionEl;
+
+  //   var deleteButtonEl = document.createElement("button");
+  //   deleteButtonEl.textContent = "Delete";
+  //   deleteButtonEl.className = "btn";
+  //   mainPage = deleteButtonEl;
+};
+
+// Timer Function
 function timerCounter() {
   var timeLeft = 5;
 
   var timeInterval = setInterval(function () {
     if (timeLeft >= 0) {
-      timer.textContent = timeLeft;
+      timer.textContent = "Time Remaining: " + timeLeft;
       console.log("There are " + timeLeft + " seconds left");
       timeLeft--;
     } else {
@@ -15,7 +60,15 @@ function timerCounter() {
   }, 1000);
 }
 
-startButton.onclick = timerCounter;
+// Start Quiz Function
+var startQuiz = function () {
+  console.log("the quiz has started");
+  timerCounter();
+
+  creatingButtons();
+};
+
+startButton.onclick = startQuiz;
 
 // When start button clicked then start timer starts and the user is presented with a question
 // When the user answers a question then the a message is displayed whether the response was incorrect or correct and is then presented with another question

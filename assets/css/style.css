@@ -19,23 +19,29 @@ body {
 }
 
 /* welcome page start */
-header {
-  display: flex;
+
+header h1 {
+  font-size: 15px;
+  margin: 10px;
+  padding: 15px;
+}
+
+section {
   text-align: center;
   margin: 50px;
 }
 
-header h1 {
+section h2 {
   font-size: 50px;
   margin: 15px;
 }
 
-header p {
+section p {
   margin: 10px 15px 10px 15px;
 }
 
 .btn {
-  background-color: var(--secondary-color);
+  background-color: var(--tertiary-color);
   border: 1px;
   border-radius: 12px;
   border-color: var(--light-color);
