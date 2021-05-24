@@ -11,39 +11,63 @@ var questions = [
   {
     question: "This is your first question?",
     answers: ["a", "b", "c", "d"],
+    correctAnswer: "c",
   },
   {
     question: "This is your second question?",
     answers: ["a", "b", "c", "d"],
+    correctAnswer: "a",
   },
   {
     question: "This is your third question?",
     answers: ["a", "b", "c", "d"],
+    correctAnswer: "b",
   },
   {
     question: "This is your fourth question?",
     answers: ["a", "b", "c", "d"],
+    correctAnswer: "d",
   },
   {
     question: "This is your fifth question?",
     answers: ["a", "b", "c", "d"],
+    correctAnswer: "a",
   },
 ];
 
 // making the objects within the array a button
 var creatingButtons = function () {
   var questionSectionEl = document.createElement("div");
-  questionSectionEl.className = "questions";
-  questionSectionEl.textContent = questions[0].question;
+  var questionTitle = document.createElement("h2");
+  var questionAnswer = document.createElement("button");
+  questionAnswer.className = "btn";
 
-  console.log(questionSectionEl.nodeType);
-  mainPage = questionSectionEl;
+  questionSectionEl.appendChild(questionTitle);
+  questionSectionEl.appendChild(questionAnswer);
+  mainPage.appendChild(questionSectionEl);
+
+  console.log(mainPage);
+
+  //   questionSectionEl.className = "questions";
+  //   questionSectionEl.textContent = questions[0].question;
+
+  //   for (var i = 0; i < questions.answers; i++) {
+  //     var question = document.createElement("button");
+  //     question.textContent = question.question[i].answers;
+  //   }
+  //   console.log(questionSectionEl.nodeType);
+  //   mainPage = questionSectionEl;
 
   //   var deleteButtonEl = document.createElement("button");
   //   deleteButtonEl.textContent = "Delete";
   //   deleteButtonEl.className = "btn";
   //   mainPage = deleteButtonEl;
 };
+
+questions.forEach(function (question) {
+  var question = document.createElement("button");
+  question.textContent = question.question[i].answers;
+});
 
 // Timer Function
 function timerCounter() {
@@ -63,9 +87,9 @@ function timerCounter() {
 // Start Quiz Function
 var startQuiz = function () {
   console.log("the quiz has started");
-  timerCounter();
+  timerCounter(creatingButtons());
 
-  creatingButtons();
+  //   creatingButtons();
 };
 
 startButton.onclick = startQuiz;
